@@ -6,9 +6,6 @@ const HeaderMenu = ({ navLinks }) => {
   const location = useLocation();
   const pathname = location.pathname;
 
-
-  console.log(pathname);
-
   return (
     <nav className="hidden md:flex space-x-8">
       <div className="hidden lg:flex items-center space-x-8 min-w-[400px]">

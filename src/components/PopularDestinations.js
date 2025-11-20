@@ -112,6 +112,7 @@ export default function PopularDestinations() {
                     [0, 1, 2, 3, 4].map((dot, i) => {
                         return (
                             <button
+                                key={dot + i}
                                 onClick={() => setActiveIndex(i)}
                                 className={`w-2 h-2 rounded-full hover:bg-primary-dark transition
                                 ${activeIndex === i ? "bg-primary-dark" : "bg-background-bullet"}

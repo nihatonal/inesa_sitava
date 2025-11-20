@@ -1,5 +1,5 @@
 {
-    "name": "TA-Travel",
+    "name": "SA-Travel",
     "short_name": "TAT",
     "icons": [
         {
@@ -24,6 +24,6 @@
         }
     ],
     "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "background_color": "#006D80",
     "display": "standalone"
 }
