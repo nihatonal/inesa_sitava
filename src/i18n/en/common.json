@@ -1,0 +1,66 @@
+{
+    "metadata": {
+        "home": {
+            "title": "Sitava Travel Group | Главная",
+            "description": "Исследуйте лучшие туристические направления с Sitava Travel Group."
+        },
+        "about": {
+            "title": "Sitava Travel Group | О нас",
+            "description": "Узнайте больше о нашей команде и миссии."
+        },
+        "destinations": {
+            "title": "Sitava Travel Group | Направления",
+            "description": "Откройте для себя удивительные туристические направления по всему миру."
+        },
+        "featuredtours": {
+            "title": "Sitava Travel Group | Туры",
+            "description": "Просмотрите популярные туры, подобранные для вас."
+        },
+        "blogs": {
+            "title": "Sitava Travel Group | Блог",
+            "description": "Читайте советы, истории и рекомендации для путешествий."
+        },
+        "contact": {
+            "title": "Sitava Travel Group | Контакты",
+            "description": "Свяжитесь с нами для бронирования туров или получения информации."
+        },
+        "terms-of-service": {
+            "title": "Sitava Travel Group | Условия использования",
+            "description": "Ознакомьтесь с нашими условиями предоставления услуг."
+        },
+        "privacy-policy": {
+            "title": "Sitava Travel Group | Политика конфиденциальности",
+            "description": "Узнайте, как мы обрабатываем и защищаем вашу личную информацию."
+        },
+        "cookie-policy": {
+            "title": "Sitava Travel Group | Политика использования файлов cookie",
+            "description": "Как мы используем cookie-файлы для улучшения пользовательского опыта."
+        }
+    },
+    "nav": {
+        "home": "Главная",
+        "about": "О нас",
+        "destinations": "Направления",
+        "blogs": "Блог",
+        "contact": "Контакты"
+    },
+    "footer": {
+        "description": "Путешествуйте по миру с SitavaTravel и откройте для себя лучшие направления и туры.",
+        "quickLinks": "Быстрые ссылки",
+        "about": "О нас",
+        "destinations": "Направления",
+        "tours": "Туры",
+        "blogs": "Блог",
+        "contact": "Контакты",
+        "email": "Эл. почта",
+        "phone": "Телефон",
+        "newsletter": "Подписка на новости",
+        "placeholder": "Введите ваш email",
+        "subscribe": "Подписаться",
+        "subscribed": "Вы подписались",
+        "allRightsReserved": "Все права защищены",
+        "termsOfService": "Условия использования",
+        "privacyPolicy": "Политика конфиденциальности",
+        "cookiePolicy": "Политика использования файлов cookie"
+    }
+}

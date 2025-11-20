@@ -1,0 +1,100 @@
+{
+    "hero": {
+        "title": "Where Will the Ocean Take You Next?",
+        "subtitle": "Discover extraordinary destinations with our curated luxury travel experiences",
+        "cta1": {
+            "label": "Explore Destinations",
+            "href": "/destinations"
+        },
+        "cta2": {
+            "label": "Plan Your Trip",
+            "href": "/"
+        }
+    },
+    "withus": {
+        "tagline": "Let’s Go Together",
+        "title": "Plan Your Trip",
+        "titleHighlight": "With us",
+        "description": "There are many variations of passages available, but the majority have suffered alteration in some form, by injected humour randomised words which don’t look even slightly believable.",
+        "features": {
+            "exclusive": {
+                "title": "Exclusive Trip",
+                "text": "Tailor-made tours available for all regions."
+            },
+            "guide": {
+                "title": "Professional Guide",
+                "text": "Our guides ensure you have an unforgettable experience."
+            }
+        },
+        "cta": "Learn More"
+    },
+    "about": {
+        "title": "A Fresh Name, Backed by 15 Years of Experience",
+        "text": " SitavaTravel is a new chapter built on a decade and a half of crafting unforgettable journeys. With roots in experience and eyes on the future, we redefine modern travel — just for you.",
+        "feature_1_title": "15+ Years in the Industry",
+        "feature_1_text": "Trusted by thousands, our legacy ensures seamless experiences from departure to return.",
+        "feature_2_title": "Tailored Journeys, Every Time",
+        "feature_2_text": "We believe travel should be as unique as you — no packages, only personalized.",
+        "feature_3_title": "Modern Meets Timeless",
+        "feature_3_text": "We blend luxury with authenticity, offering you the best of both worlds."
+    },
+    "destinations": {
+        "section_title": " Featured Destinations",
+        "section_description": " Explore our handpicked selection of the world's most extraordinary locations",
+        "cta": "View All Destinations"
+    },
+    "testimonials": {
+        "section_title": "What Our Travelers Say",
+        "section_description": "Real experiences from travelers who trusted SitavaTravel.",
+        "items": {
+            "1": {
+                "name": "John D.",
+                "location": "Maldives",
+                "quote": "SitavaTravel curated our dream Maldives vacation – unforgettable!",
+                "rating": 5
+            },
+            "2": {
+                "name": "Maria S.",
+                "location": "Turkey",
+                "quote": "Luxury meets personal touch in every journey.",
+                "rating": 4
+            },
+            "3": {
+                "name": "Liam K.",
+                "location": "UAE",
+                "quote": "A seamless, unforgettable experience from start to finish.",
+                "rating": 5
+            }
+        }
+    },
+    "featuredtours": {
+        "section_title": "Featured Tours",
+        "section_description": "Handpicked journeys for unforgettable memories. Explore our top tours and find your next adventure.",
+        "cta": " View All Tours",
+        "cta_card": "View Tour",
+        "from": "from"
+    },
+    "approach": {
+        "section_title": "How We Craft Your Journey",
+        "section_description": "A seamless travel experience in three simple steps — personalized, curated, unforgettable.",
+        "step_1_title": "1. Listen & Plan",
+        "step_1_text": "We start by understanding your travel dreams and tailor every detail accordingly.",
+        "step_2_title": "2. Curate & Book",
+        "step_2_text": "From flights to exclusive experiences, we handle everything for you.",
+        "step_3_title": "3. Travel & Enjoy",
+        "step_3_text": "Relax, explore, and create memories while we support you 24/7."
+    },
+    "blog": {
+        "section_title": "Travel Insights & Tips",
+        "section_description": "Explore our latest stories, guides, and insider advice for your next adventure.",
+        "cta": "View All Posts"
+    },
+    "cta": {
+        "title": "Let’s Plan Your Next Escape",
+        "description": "Whether you're dreaming of crystal beaches or cultural wonders, we’ll craft the perfect journey for you.",
+        "contact_button": "Plan Your Trip",
+        "newsletter_title": "Or stay in the loop",
+        "newsletter_placeholder": "Enter your email",
+        "newsletter_button": "Subscribe"
+    }
+}

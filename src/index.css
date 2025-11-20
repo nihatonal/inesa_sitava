@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Montserrat";
+  font-display: swap !important;
+}
+@font-face {
+  font-family: "Open Sans";
+  font-display: swap !important;
+}
+@font-face {
+  font-display: swap;
+}
+
+html {
+  font-family: "Inter", Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: "#ebf5fa";
+}
+/* Headings */
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+.text-shadow-soft {
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.28);
+}
+
+.glass-btn {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden; /* önemli */
+
+  /* Glass background */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
+  /* Inset shadows */
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.45),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.65),
+    0 4px 12px rgba(0, 0, 0, 0.35);
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+/* GRADIENT BORDER — border-radius bozulmadan */
+.glass-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.8px; /* border kalınlığı */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.4),
+    rgba(0, 0, 0, 0.6)
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.55),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.45),
+    0 6px 18px rgba(0, 0, 0, 0.35);
+}
+.cta-btn {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden; /* önemli */
+
+  /* Glass background */
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
+  /* Inset shadows */
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.55),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.45),
+    0 6px 18px rgba(0, 0, 0, 0.35);
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+/* GRADIENT BORDER — border-radius bozulmadan */
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px; /* border kalınlığı */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.4),
+    rgba(53, 92, 106, 0.65)
+  );
+
+  -webkit-mask:
+    linear-gradient(#6eadc4 0 0) content-box,
+    linear-gradient(#6eadc4 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+.cta-btn:hover {
+  background: rgba(255, 255, 255, 0.52);
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.85),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.25),
+    0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.swiper-pagination-bullet {
+  background: #009fba !important; /* primary color */
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  background: #006d80 !important; /* primary-dark */
+  opacity: 1;
+}
+
+.swiper-pagination {
+  margin-top: 20px;
+  position: relative !important;
+}
