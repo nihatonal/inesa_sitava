@@ -82,7 +82,7 @@ export default function RecommendedPlaces() {
                     </p>
 
                 </div>
-                <div className='px-8 md:px-16 lg:px-0'>
+                <div className='px-16 lg:px-0'>
                     <Swiper
                         modules={[Pagination]}
                         spaceBetween={20}
@@ -96,10 +96,11 @@ export default function RecommendedPlaces() {
                         className="pb-12"
                     >
                         {places.map((place, index) => (
-                            <SwiperSlide key={index} className="h-auto">
-                                <div className="bg-white group rounded-2xl cursor-pointer h-full flex flex-col">
+                            <SwiperSlide key={index} >
+                                <div className="relative bg-white group rounded-2xl cursor-pointer 
+                                min-h-[350px] flex flex-col gap-2">
 
-                                    <div className='overflow-hidden rounded-tr-xl rounded-tl-xl'>
+                                    <div className='overflow-hidden h-48 rounded-tr-xl rounded-tl-xl'>
                                         <img
                                             src={urlFor(place.img).width(400).height(300).url()}
                                             alt={place.title}
@@ -107,18 +108,23 @@ export default function RecommendedPlaces() {
                                         />
                                     </div>
 
-                                    <div className="text-left mt-4 px-3 flex-1">
-                                        <h3 className="text-lg font-semibold text-secondary">{place.title}</h3>
-                                        <p className="text-sm text-secondary/70">{place.location}</p>
-                                        <p className="text-primary font-bold text-lg mt-2">{place.price}$</p>
-                                    </div>
+                                    <div className='flex flex-col justify-between'>
+                                        <div className="text-left px-3 space-y-1">
+                                            <h3 className="text-lg font-semibold text-secondary ">{place.title}</h3>
+                                            <p className="text-sm text-secondary/70">{place.location}</p>
+                                            <div className="text-left flex items-center">
+                                                <p className="text-primary font-bold text-lg">{place.price}$</p>
+                                                <span>&nbsp; / &nbsp;</span>
+                                                <span className="text-secondary/70 text-sm">{place.days} {getRussianDayWord(place.days)} </span>
+                                            </div>
+                                        </div>
 
-                                    <div className="flex items-center justify-between px-3 pb-3 mt-4">
-                                        <span className="text-secondary/70 text-sm">{place.days} {getRussianDayWord(place.days)} </span>
-                                        <button className="px-4 py-2 rounded-xl bg-primary text-white text-sm hover:bg-primary-dark transition">
+                                        <button className="absolute bottom-3 right-3 px-4 py-2 rounded-xl bg-primary text-white text-sm hover:bg-primary-dark transition">
                                             Book Now
                                         </button>
+
                                     </div>
+
                                 </div>
                             </SwiperSlide>
 
