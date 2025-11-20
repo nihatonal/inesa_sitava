@@ -58,7 +58,7 @@ function AppContent() {
 
   // Eğer URL "/admin" ile başlıyorsa butonu gösterme
   const isAdminRoute = location.pathname.startsWith("/admin");
-  if (!isAdminRoute) useGoogleAnalytics("G-HR4MFDD6F7");
+  useGoogleAnalytics("G-HR4MFDD6F7", !isAdminRoute);
 
   return (
     <>

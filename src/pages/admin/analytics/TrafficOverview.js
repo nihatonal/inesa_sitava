@@ -13,6 +13,7 @@ import {
     YAxis,
     CartesianGrid,
 } from "recharts";
+import { mapTrafficSources } from "../../../lib/mapTrafficSources";
 
 export const TrafficOverview = ({ period }) => {
     const [deviceData, setDeviceData] = useState([]);
