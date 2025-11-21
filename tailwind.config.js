@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         primary: {
           DEFAULT: '#009FBA',
-          light: '#7ae5ff',
+          light: '#78e0fa',
           dark: '#006D80',
         },
         secondary: {
@@ -21,10 +21,11 @@ module.exports = {
         },
         background: {
           DEFAULT: "#ebf5fa",
-          bullet:"#c3e6eb"
+          bullet:"#c3e6eb",
+          card:"#F8F9FA",
         },
         muted: {
-          DEFAULT: '#F4F7F8',
+          DEFAULT: '#fff',
           light: '#FAFCFC',
           dark: '#D8E0E2',
         },

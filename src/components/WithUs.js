@@ -6,7 +6,7 @@ import { Button } from "./ui/Button";
 const WithUs = () => {
     const { t } = useTranslation('home');
     return (
-        <section className="w-full bg-background py-20 relative overflow-hidden">
+        <section className="w-full bg-background py-16 md:py-24 relative overflow-hidden">
             {/* Balon ikonları */}
             <Container>
                 <div className="container mx-auto md:px-6 grid lg:grid-cols-2 gap-10 items-center">

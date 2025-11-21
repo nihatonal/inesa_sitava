@@ -12,8 +12,14 @@ const Header = () => {
   const { t } = useTranslation("common");
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 0);
+    const handleScroll = () => {
+      // Hero section yüksekliği
+      const heroHeight = window.innerHeight;
+      setScrolled(window.scrollY > heroHeight);
+    };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -31,15 +37,15 @@ const Header = () => {
     <>
       <header
         className={`fixed top-0 left-0 w-full z-20 overflow-hidden text-white font-medium
-        bg-white/15 backdrop-blur-sm
+        ${scrolled ? "bg-secondary/55" : "bg-white/15"} backdrop-blur-sm
         shadow-[inset_0_2px_4px_rgba(255,255,255,0.45),
                 inset_0_-2px_6px_rgba(0,0,0,0.65),
-                0_4px_12px_rgba(0,0,0,0.35)]
+                0_4px_12px_rgba(0,0,0,0.35)] transition-colors duration-700 ease-in-out
       `}
       >
         <div className="px-8 flex items-center justify-between h-16">
           <Logo />
-          <HeaderMenu navLinks={navLinks} />
+          <HeaderMenu navLinks={navLinks} scrolled={scrolled} />
           <button
             onClick={() => setOpen(true)}
             className={`hidden md:block px-8 py-2 bg-secondary text-muted font-medium rounded-full shadow-large hover:scale-[1.05] transition`}

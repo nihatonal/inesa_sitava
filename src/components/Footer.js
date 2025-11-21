@@ -5,48 +5,15 @@ import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
 import Container from "./Container";
 import Logo from "./Logo";
 import { useToast } from "../hooks/use-toast";
+import NewsletterBanner from "./NewsletterBanner";
 
 const Footer = () => {
-    const { toast } = useToast();
-    const [email, setEmail] = useState("");
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setError("");
-
-        try {
-            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/newsletter`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email }),
-            });
-
-            if (!res.ok) {
-                const data = await res.json();
-                throw new Error(data.message || "Ошибка при подписке");
-            }
-            toast({
-                title: "Спасибо за подписку!",
-            });
-            setEmail("");
-        } catch (err) {
-            toast({
-                title: "Ошибка",
-                description: err.message,
-                variant: 'destructive',
-            });
-            setError(err.message);
-        } finally {
-            setLoading(false);
-        }
-    };
 
     return (
-        <footer className="bg-gradient-to-b from-primary-dark to-secondary text-muted border-t border-border py-12">
-            <Container className="py-12">
+        <footer className="bg-white text-secondary border-t border-border">
+            <Container className="pt-16 md:pt-24 pb-12 flex flex-col gap-10">
+                <NewsletterBanner />
+                <span className="h-[0.5px] w-full bg-secondary/20"></span>
                 <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8 items-start">
                     {/* Brand */}
                     <div className="space-y-4 min-h-[80px]">
@@ -139,30 +106,10 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Newsletter */}
-                    <div>
-                        <h3 className="font-semibold mb-4">Подпишитесь на новости</h3>
-                        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-                            <input
-                                type="email"
-                                placeholder="Ваш email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="px-4 py-2 border border-border rounded-md bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                                required
-                            />
-                            <button
-                                type="submit"
-                                disabled={loading}
-                                className="px-4 py-2 bg-primary text-muted rounded-md font-medium hover:opacity-90 transition disabled:opacity-50"
-                            >
-                                {loading ? "Подписка..." : "Подписаться"}
-                            </button>
-                        </form>
-                    </div>
-                </div>
 
-                <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
+                </div>
+                <span className="h-[0.5px] w-full bg-secondary/20"></span>
+                <div className="text-center text-sm text-muted-foreground">
                     <p>&copy; {new Date().getFullYear()} Travel. Все права защищены.</p>
                 </div>
             </Container>

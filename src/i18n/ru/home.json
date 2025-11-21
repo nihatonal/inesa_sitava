@@ -50,57 +50,16 @@
         "description": "Откройте красивые места и наслаждайтесь незабываемыми путешествиями."
     },
     "testimonials": {
-        "section_title": "What Our Travelers Say",
-        "section_description": "Real experiences from travelers who trusted SitavaTravel.",
-        "items": {
-            "1": {
-                "name": "John D.",
-                "location": "Maldives",
-                "quote": "SitavaTravel curated our dream Maldives vacation – unforgettable!",
-                "rating": 5
-            },
-            "2": {
-                "name": "Maria S.",
-                "location": "Turkey",
-                "quote": "Luxury meets personal touch in every journey.",
-                "rating": 4
-            },
-            "3": {
-                "name": "Liam K.",
-                "location": "UAE",
-                "quote": "A seamless, unforgettable experience from start to finish.",
-                "rating": 5
-            }
-        }
-    },
-    "featuredtours": {
-        "section_title": "Featured Tours",
-        "section_description": "Handpicked journeys for unforgettable memories. Explore our top tours and find your next adventure.",
-        "cta": " View All Tours",
-        "cta_card": "View Tour",
-        "from": "from"
-    },
-    "approach": {
-        "section_title": "How We Craft Your Journey",
-        "section_description": "A seamless travel experience in three simple steps — personalized, curated, unforgettable.",
-        "step_1_title": "1. Listen & Plan",
-        "step_1_text": "We start by understanding your travel dreams and tailor every detail accordingly.",
-        "step_2_title": "2. Curate & Book",
-        "step_2_text": "From flights to exclusive experiences, we handle everything for you.",
-        "step_3_title": "3. Travel & Enjoy",
-        "step_3_text": "Relax, explore, and create memories while we support you 24/7."
+        "tagline": "Отзыв",
+        "title": "Что говорят о нас клиенты"
     },
     "blog": {
-        "section_title": "Travel Insights & Tips",
-        "section_description": "Explore our latest stories, guides, and insider advice for your next adventure.",
-        "cta": "View All Posts"
+        "title": "Новости и статьи о туризме",
+        "tagline": "Полезные советы и вдохновение для путешествий",
+        "description": "Читайте свежие новости, интересные статьи и полезные советы о путешествиях по всему миру",
+        "cta": "Смотреть все статьи"
     },
-    "cta": {
-        "title": "Let’s Plan Your Next Escape",
-        "description": "Whether you're dreaming of crystal beaches or cultural wonders, we’ll craft the perfect journey for you.",
-        "contact_button": "Plan Your Trip",
-        "newsletter_title": "Or stay in the loop",
-        "newsletter_placeholder": "Enter your email",
-        "newsletter_button": "Subscribe"
+    "newsletter":{
+        "title":"Будьте в курсе последних новостей"
     }
 }

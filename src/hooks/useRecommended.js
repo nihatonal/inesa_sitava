@@ -4,8 +4,8 @@ import { sanityClient } from "../lib/sanityClient"
 
 
 export const fetchTrekkingPackages = async () => {
-    const query = `
-    *[_type == "trekking"]{
+  const query = `
+    *[_type == "recommended"&& published == true]{
       _id,
       title,
       slug,
@@ -17,6 +17,6 @@ export const fetchTrekkingPackages = async () => {
       img
     } | order(publishedAt desc)
   `
-    const result = await sanityClient.fetch(query)
-    return result
+  const result = await sanityClient.fetch(query)
+  return result
 }

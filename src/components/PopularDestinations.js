@@ -41,6 +41,8 @@ export default function PopularDestinations() {
     const [activeIndex, setActiveIndex] = useState(2); // default center card
     const { t } = useTranslation('home');
     const [isMobile, setIsMobile] = useState(false);
+    const [dragging, setDragging] = useState(false);
+    let startX = 0;
 
     // Mobil kontrolü
     useEffect(() => {
@@ -50,9 +52,23 @@ export default function PopularDestinations() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const handleDragEnd = (event, info) => {
+        const offset = info.offset.x;
+        const velocity = info.velocity.x;
+
+        // Hangi yöne gidildiğine karar ver:
+        if (offset < -30 || velocity < -300) {
+            // sola sürüklendi → bir sonraki kart
+            setActiveIndex(prev => Math.min(prev + 1, images.length - 1));
+        } else if (offset > 30 || velocity > 300) {
+            // sağa sürüklendi → önceki kart
+            setActiveIndex(prev => Math.max(prev - 1, 0));
+        }
+    };
+
     return (
-        <div className="w-full flex flex-col bg-muted items-center text-center py-16 overflow-hidden">
-            <p className="text-secondary font-medium mb-1">{t("destinations.subtitle")}</p>
+        <div className="w-full flex flex-col bg-muted items-center text-center py-16 md:py-24 overflow-hidden">
+            <p className="text-secondary font-medium  px-12 md:px-0 leading-tight">{t("destinations.subtitle")}</p>
             <h2 className="font-heading text-3xl md:text-5xl font-bold text-secondary mt-2 leading-tight">{t("destinations.title")}</h2>
 
             <div className=" relative flex justify-center items-center 
@@ -63,24 +79,42 @@ export default function PopularDestinations() {
                     return (
                         <motion.div
                             key={item.id}
-                            onClick={() => setActiveIndex(index)}
                             className="absolute cursor-pointer"
                             initial={false}
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            onDragStart={() => setDragging(true)}
+                            onDragEnd={handleDragEnd}
+
+                            onPointerDown={(e) => {
+                                startX = e.clientX;
+                                setDragging(false);
+                            }}
+
+                            onPointerMove={(e) => {
+                                if (Math.abs(e.clientX - startX) > 5) {
+                                    setDragging(true);
+                                }
+                            }}
+
+                            onPointerUp={() => {
+                                if (!dragging) setActiveIndex(index);
+                            }}
+
                             animate={{
                                 x: (index - activeIndex) * (isMobile ? 45 : 140),
                                 scale:
                                     Math.abs(index - activeIndex) === 0 ? 1 :
-                                        Math.abs(index - activeIndex) === 1 ? 0.90 :
-                                            Math.abs(index - activeIndex) === 2 ? 0.80 :
-                                                Math.abs(index - activeIndex) === 3 ? 0.70 :
-                                                    0.60,
-
-
+                                        Math.abs(index - activeIndex) === 1 ? 0.9 :
+                                            Math.abs(index - activeIndex) === 2 ? 0.8 :
+                                                Math.abs(index - activeIndex) === 3 ? 0.7 :
+                                                    0.6,
                                 opacity: 1,
                                 zIndex: isActive ? 10 : 10 - Math.abs(index - activeIndex)
                             }}
                             transition={{ type: "spring", stiffness: 200, damping: 20 }}
                         >
+
                             <div className="w-[240px] h-[380px] rounded-3xl overflow-hidden 
                             shadow-xl bg-gray-200 relative">
                                 <img
@@ -124,7 +158,7 @@ export default function PopularDestinations() {
 
 
             </div>
-            <Button className="mt-8">
+            <Button className="mt-8 md:mt-12">
                 {t("destinations.cta")}
             </Button>
         </div >

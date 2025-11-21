@@ -18,9 +18,6 @@ html {
   font-family: "Inter", Arial, sans-serif;
   scroll-behavior: smooth;
 }
-body {
-  background-color: "#ebf5fa";
-}
 /* Headings */
 h1,
 h2,
@@ -142,6 +139,46 @@ h3 {
 }
 
 .swiper-pagination {
-  margin-top: 20px;
+  margin-top: 30px;
   position: relative !important;
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+}
+.elegant-coverflow .swiper-slide {
+  transition: all 0.35s ease;
+}
+
+.elegant-coverflow .swiper-slide.inactive-card {
+  opacity: 0.55;
+  transform: scale(0.92); /* 🔥 Yan kartlar büyütüldü! */
+}
+
+.elegant-coverflow .swiper-slide.active-card {
+  opacity: 1;
+  transform: scale(1);
+}
+.active-card {
+  transform: scale(1.05);
+  opacity: 1;
+  transition: all 0.35s ease;
+}
+
+.inactive-card {
+  transform: scale(0.9);
+  opacity: 0.6;
+  transition: all 0.35s ease;
+}
+@media (max-width: 640px) {
+  .active-card {
+    transform: scale(1); /* Artık çok büyütme yok, mobile için ideal */
+    opacity: 1;
+  }
+
+  .inactive-card {
+    transform: scale(1); /* 🔥 Yan kartlar artık küçülmüyor */
+    opacity: 0.8;
+  }
 }
