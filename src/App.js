@@ -25,6 +25,8 @@ import GoogleAnalytics from "./pages/admin/GoogleAnalytics";
 
 // Dynamic imports
 const Home = React.lazy(() => import("./pages/home/Home"));
+const CountryDetail = React.lazy(() => import("./pages/Countries/CountryDetails.js"));
+const Countries = React.lazy(() => import("./pages/Countries/Countries.js"));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -70,6 +72,8 @@ function AppContent() {
       <Routes>
         {/* Ana site sayfaları */}
         <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/destinations" element={<Layout><Countries /></Layout>} />
+        <Route path="/destinations/:cid" element={<Layout><CountryDetail /></Layout>} />
         {/* Admin sayfaları */}
         <Route path="/admin/login" element={<Login />} />
         <Route path="/admin/change-password" element={<ChangePassword />} />

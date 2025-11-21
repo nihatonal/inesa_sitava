@@ -40,7 +40,7 @@ const Hero = () => {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             >
-                <div className="glass-btn px-2 py-4">
+                <div className="glass-btn text-white px-2 py-4">
                     {/* <div className="w-1 h-3 bg-white rounded-full" /> */}
                     <MoveDown className="w-5 h-5" />
                 </div>

@@ -2,6 +2,7 @@ import { CheckCircle } from "lucide-react";
 import Container from './Container';
 import { useTranslation } from "react-i18next";
 import { Button } from "./ui/Button";
+import { Link } from "react-router-dom";
 
 const WithUs = () => {
     const { t } = useTranslation('home');
@@ -70,9 +71,10 @@ const WithUs = () => {
                                 </div>
                             </div>
                         </div>
-
-                        <Button className="mt-8">
-                            {t("withus.cta")}
+                        <Button asChild variant="link" className="mt-8">
+                            <Link to="/aboutus" size="link" className="rounded-full px-8 py-3">
+                                {t("withus.cta")}
+                            </Link>
                         </Button>
 
                         {/* Right traveler image */}

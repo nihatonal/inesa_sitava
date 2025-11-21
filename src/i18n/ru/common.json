@@ -69,5 +69,28 @@
         "comment4": "Отзыва",
         "comment5": "Отзывов",
         "readTime": " Мин. чтение"
+    },
+    "countryDetail": {
+        "descriptionSection": {
+            "label": "Описание"
+        },
+        "weatherSection": {
+            "avgWeather": "Средняя погода",
+            "bestSeason": "Лучший сезон",
+            "seasons": "Сезоны"
+        },
+        "beachesSection": {
+            "title": "Важные пляжи"
+        },
+        "highlightsSection": {
+            "title": "Главные особенности"
+        },
+        "buttons": {
+            "viewTours": "Смотреть туры"
+        },
+        "navigation": {
+            "home": "Главная",
+            "countries": "Страны"
+        }
     }
 }
