@@ -13,7 +13,7 @@ export default function ArticleCard({ article }) {
                     <span>{article.readingTime} мин</span>
                 </div>
 
-                <h3 className="text-lg font-semibold">{article.title}</h3>
+                <h3 className="text-lg font-semibold line-clamp-2">{article.title}</h3>
                 <p className="text-secondary/70 text-sm mt-2 mb-3 line-clamp-2">
                     {article.excerpt}
                 </p>
