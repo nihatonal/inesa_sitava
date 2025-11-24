@@ -18,6 +18,9 @@ html {
   font-family: "Inter", Arial, sans-serif;
   scroll-behavior: smooth;
 }
+body{
+  overflow-x: hidden;
+}
 /* Headings */
 h1,
 h2,

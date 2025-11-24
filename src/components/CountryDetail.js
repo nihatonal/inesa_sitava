@@ -3,51 +3,20 @@ import { motion } from "framer-motion";
 import { MapPin, Sun, Waves, Info } from "lucide-react";
 import { Button } from "./ui/Button";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import Container from "./Container";
 export default function CountryDetail({
-  name,
-  motto,
   description,
   weather,
   beaches,
   highlights,
-  heroImage,
+
 }) {
   const { t } = useTranslation('common');
   return (
     <section className="w-full bg-background text-secondary">
-      {/* Hero */}
-      <div
-        className="w-full h-[60vh] bg-cover bg-center relative flex items-end"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/60" />
-        <div className="relative z-10 p-8 md:p-16">
-          <h1 className="text-white text-4xl md:text-6xl font-heading font-bold drop-shadow-lg">
-            {name}
-          </h1>
-          <h3 className="text-white/80 text-xl md:text-2xl mt-2 font-medium drop-shadow-lg">{motto}</h3>
-          <nav className="text-white/70 text-sm mt-2 flex gap-1">
-            <Link to="/" className="hover:text-white transition">
-              {t("countryDetail.navigation.home")}
-            </Link>
-
-            <span>&gt;</span>
-
-            <Link to="/destinations" className="hover:text-white transition">
-              {t("countryDetail.navigation.countries")}
-            </Link>
-
-            <span>&gt;</span>
-
-            <span className="text-white">{name}</span>
-          </nav>
-        </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 md:px-4 py-12">
+      <Container className="px-6 md:px-4 py-12">
         {/* Description */}
-        <p className="text-secondary/80 max-w-3xl leading-relaxed text-lg">
+        <p className="text-secondary/80  leading-relaxed text-lg">
           {description}
         </p>
 
@@ -108,7 +77,7 @@ export default function CountryDetail({
         </div>
 
         <Button className="mt-12">{t("countryDetail.buttons.viewTours")}</Button>
-      </div>
+      </Container>
     </section>
   );
 }

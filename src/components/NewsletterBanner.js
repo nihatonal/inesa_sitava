@@ -42,7 +42,7 @@ const NewsletterBanner = () => {
     };
     return (
         <div className="flex flex-col lg:flex-row justify-between item-center">
-            <h2 className="max-w-[465px] mb-4 lg:mb-0 font-heading text-2xl md:text-4xl font-bold text-secondary">
+            <h2 className="mb-4 lg:mb-0 font-heading text-2xl md:text-4xl font-bold text-secondary">
                 {t("newsletter.title")}
             </h2>
 

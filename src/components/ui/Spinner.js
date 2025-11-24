@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function Spinner({ size = 40, color = '#3498db' }) {
+export default function Spinner({ size = 40, color = '#006D80' }) {
   return (
     <div
       className="flex justify-center items-center"

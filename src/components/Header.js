@@ -27,10 +27,10 @@ const Header = () => {
 
   const navLinks = [
     { page: "/", label: t("nav.home") },
-    { page: "about", label: t("nav.about") },
-    { page: "destinations", label: t("nav.destinations") },
-    { page: "blogs", label: t("nav.blogs") },
-    { page: "contact", label: t("nav.contact") },
+    { page: "/about", label: t("nav.about") },
+    { page: "/destinations", label: t("nav.destinations") },
+    { page: "/blogs", label: t("nav.blogs") },
+    { page: "/contact", label: t("nav.contact") },
   ];
 
   return (
@@ -46,33 +46,36 @@ const Header = () => {
         <div className="px-8 flex items-center justify-between h-16">
           <Logo />
           <HeaderMenu navLinks={navLinks} scrolled={scrolled} />
-          <button
-            onClick={() => setOpen(true)}
-            className={`hidden md:block px-8 py-2 bg-secondary text-muted font-medium rounded-full shadow-large hover:scale-[1.05] transition`}
-          >
-            Оставить заявку
-          </button>
+          <div className="flex items-center gap-6">
+            <button
+              onClick={() => setOpen(true)}
+              className={`hidden md:block px-8 py-2 bg-secondary text-muted font-medium rounded-full shadow-large hover:scale-[1.05] transition`}
+            >
+              Оставить заявку
+            </button>
 
 
-          {/* Hamburger Button */}
-          <button
-            onClick={toggleSidebar}
-            aria-label="Open mobile menu"
-            className="lg:hidden relative w-8 h-8 flex flex-col justify-center items-center gap-1 z-50"
-          >
-            <span
-              className={`block w-8 h-0.5 bg-white rounded transform transition duration-300 ${isSidebarOpen ? "rotate-45 translate-y-2" : ""
-                }`}
-            />
-            <span
-              className={`block w-8 h-0.5 bg-white rounded transition duration-300 ${isSidebarOpen ? "opacity-0" : "opacity-100"
-                }`}
-            />
-            <span
-              className={`block w-8 h-0.5 bg-white rounded transform transition duration-300 ${isSidebarOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
-            />
-          </button>
+            {/* Hamburger Button */}
+            <button
+              onClick={toggleSidebar}
+              aria-label="Open mobile menu"
+              className="lg:hidden relative w-8 h-8 flex flex-col justify-center items-center gap-1 z-50"
+            >
+              <span
+                className={`block w-8 h-0.5 bg-white rounded transform transition duration-300 ${isSidebarOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
+              />
+              <span
+                className={`block w-8 h-0.5 bg-white rounded transition duration-300 ${isSidebarOpen ? "opacity-0" : "opacity-100"
+                  }`}
+              />
+              <span
+                className={`block w-8 h-0.5 bg-white rounded transform transition duration-300 ${isSidebarOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
+              />
+            </button>
+          </div>
+
 
 
         </div>

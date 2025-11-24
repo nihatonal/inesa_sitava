@@ -138,7 +138,7 @@ const TestimonialSlider = () => {
                     modules={[Pagination]}
                     centeredSlides={true}
                     slidesPerView={1}
-                    initialSlide={1}
+                    initialSlide={2}
                     spaceBetween={24}
                     pagination={{
                         clickable: true,
