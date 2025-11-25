@@ -35,7 +35,7 @@ export default function PopularDestinations() {
             <div className="relative flex justify-center items-center w-full md:max-w-6xl h-[450px]">
                 {countriesArray.map((item, index) => (
                     <CountryCard
-                        key={item.id}
+                        key={item.id + "card" + index}
                         item={item}
                         index={index}
                         activeIndex={activeIndex}
@@ -54,8 +54,8 @@ export default function PopularDestinations() {
                         key={i}
                         onClick={() => setActiveIndex(i)}
                         className={`w-2 h-2 rounded-full transition ${activeIndex === i
-                                ? "bg-primary-dark"
-                                : "bg-background-bullet hover:bg-primary-dark"
+                            ? "bg-primary-dark"
+                            : "bg-background-bullet hover:bg-primary-dark"
                             }`}
                     ></button>
                 ))}

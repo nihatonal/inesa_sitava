@@ -40,7 +40,7 @@ export default function NewsCards({ blogs }) {
                     {/* Cards grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8 lg:mb-0">
                         {blogs.map((blog) => (
-                            <ArticleCard article={blog} />
+                            <ArticleCard article={blog} key={blog.title}/>
                         ))}
                     </div>
                     <Link to="/blogs" className="lg:hidden mx-auto py-2 px-4 rounded-full border border-primary group hover:border-secondary transition text-sm font-medium shadow-sm">

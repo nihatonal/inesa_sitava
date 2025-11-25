@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Hero from '../../components/Hero'
 import NewsCards from '../../components/NewsCards'
-import NewsletterBanner from '../../components/NewsletterBanner'
 import PopularDestinations from '../../components/PopularDestinations'
 import RecommendedPlaces from '../../components/RecommendedPlaces'
 import Skeleton from '../../components/Skeleton'
-import Stats from '../../components/Stats'
+
 import TestimonialSlider from '../../components/TestimonialSlider'
 import WithUs from '../../components/WithUs'
 import { fetchPublishedBlogs } from '../../hooks/useRecommended'

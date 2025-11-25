@@ -1,11 +1,9 @@
 // Pages/Blogs.jsx
 import React, { useMemo, useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import "dayjs/locale/ru";
-import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 
 // Modular components (adjust paths if needed)
@@ -28,16 +26,6 @@ import Destinations from "./Sidebar/Destinations.js";
 dayjs.extend(relativeTime);
 dayjs.extend(localizedFormat);
 dayjs.locale("ru");
-
-function generateSiteSchema() {
-    return {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        name: "Блог — путешествия",
-        description: "Статьи о направлениях, отелях и советах для путешествий.",
-        url: typeof window !== "undefined" ? window.location.href : "",
-    };
-}
 
 export default function Blogs() {
     const { t } = useTranslation("common");
@@ -218,16 +206,6 @@ export default function Blogs() {
 
     return (
         <section className="bg-background min-h-screen">
-            <Helmet>
-                <title>{pageTitle}</title>
-                <meta name="description" content={pageDescription} />
-                <meta property="og:title" content={pageTitle} />
-                <meta property="og:description" content={pageDescription} />
-                <meta property="og:image" content={featured?.imageUrl || featured?.image || "/assets/maldives_card.webp"} />
-                <meta property="og:type" content="website" />
-                <script type="application/ld+json">{JSON.stringify(generateSiteSchema())}</script>
-            </Helmet>
-
             <SectionHero
                 title={t("pages.blog.title")}
                 subtitle={t("pages.blog.subtitle")}

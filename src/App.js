@@ -15,6 +15,10 @@ import GenerateReviewLink from "./pages/admin/GenerateReviewLink";
 import AdminReviewLinks from "./pages/admin/AdminReviewLinks";
 import Reviews from "./pages/admin/Reviews";
 
+//SEO
+import SEO from './components/SEO.js';
+import { seoData } from "./constants/seoData";
+
 // Ana site sayfaları
 
 import { AuthProvider, useAuth } from "./context/AuthContext";
@@ -22,6 +26,7 @@ import Newsletter from "./pages/admin/Newsletter";
 import ChangePassword from "./pages/admin/ChangePassword";
 import useGoogleAnalytics from "./hooks/useGoogleAnalytics";
 import GoogleAnalytics from "./pages/admin/GoogleAnalytics";
+import { useTranslation } from "react-i18next";
 
 // Dynamic imports
 const Home = React.lazy(() => import("./pages/home/Home"));
@@ -29,7 +34,7 @@ const CountryDetail = React.lazy(() => import("./pages/Destinations/CountryDetai
 const Destinations = React.lazy(() => import("./pages/Destinations/Destinations.js"));
 const Blogs = React.lazy(() => import("./pages/blogs/Blogs.js"))
 const SingleBlogPage = React.lazy(() => import("./pages/blogs/SingleBlogPage.js"));
-const Contact =React.lazy(()=>import("./pages/contact/Contact.js"))
+const Contact = React.lazy(() => import("./pages/contact/Contact.js"))
 function ScrollToTop() {
   const { pathname } = useLocation();
   React.useEffect(() => {
@@ -57,8 +62,32 @@ function ProtectedRoute({ children }) {
 
   return children;
 }
+
+// SEO props
+let seoProps;
+
+function useSEO() {
+  const { i18n } = useTranslation();
+  const location = useLocation();
+
+  const lang = i18n.language || "ru";
+  const path = location.pathname;
+
+  const seoProps =
+    (seoData[lang] && seoData[lang][path]) || seoData["/404"];
+  return seoProps;
+}
+
+
 function AppContent() {
   const location = useLocation();
+  const seo = useSEO();
+  // Dinamik SEO uygulanacak pathler
+  const disableGlobalSEO =
+    location.pathname.startsWith("/destinations/") ||
+    location.pathname.startsWith("/blogs/") ||
+    location.pathname.startsWith("/admin");
+
 
   // Eğer URL "/admin" ile başlıyorsa butonu gösterme
   const isAdminRoute = location.pathname.startsWith("/admin");
@@ -66,6 +95,14 @@ function AppContent() {
 
   return (
     <>
+      {/* Global SEO sadece dinamik olmayan sayfalarda uygulanır */}
+      {!disableGlobalSEO && (
+        <SEO
+          title={seo.title}
+          description={seo.description}
+          jsonLD={seo.jsonLD}
+        />
+      )}
       <ScrollToTop />
       <Toaster />
 

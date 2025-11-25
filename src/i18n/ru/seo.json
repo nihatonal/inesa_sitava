@@ -1,0 +1,16 @@
+{
+    "/": {
+        "title": "Sitava-Travel — Ваш проводник в мире путешествий",
+        "description": "Откройте лучшие направления...",
+        "jsonLD": {
+            "id": "home"
+        }
+    },
+    "/contact": {
+        "title": "Контакты | Sitava-Travel",
+        "description": "Свяжитесь с нами...",
+        "jsonLD": {
+            "id": "contact"
+        }
+    }
+}

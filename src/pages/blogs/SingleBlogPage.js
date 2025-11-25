@@ -4,7 +4,6 @@ import { useParams, Link } from "react-router-dom";
 import dayjs from "../../lib/dayjsConfig.js";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import "dayjs/locale/ru";
-import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { PortableText } from "@portabletext/react";
 import { fetchSingleBlog, fetchRelatedBlogs, fetchPublishedBlogs, incrementBlogView, shouldIncreaseView, fetchBlogViews } from "../../hooks/useRecommended";
@@ -103,31 +102,6 @@ export default function SingleBlogPage() {
 
     return (
         <section className="relative bg-background py-16 min-h-screen">
-            <Helmet>
-                <title>{blog.title}</title>
-                <meta name="description" content={blog.excerpt} />
-                <meta property="og:title" content={blog.title} />
-                <meta property="og:description" content={blog.excerpt} />
-                <meta property="og:image" content={blog.imageUrl} />
-                <meta property="og:type" content="article" />
-
-                {/* JSON-LD */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "BlogPosting",
-                        headline: blog.title,
-                        description: blog.excerpt,
-                        image: blog.imageUrl,
-                        author: {
-                            "@type": "Person",
-                            name: blog.author?.name || "Автор",
-                        },
-                        datePublished: blog.publishedAt,
-                        articleSection: blog.categories?.map((c) => c.title),
-                    })}
-                </script>
-            </Helmet>
             <SectionHero
                 title={blog.title}
                 // subtitle={t("pages.blog.subtitle")}

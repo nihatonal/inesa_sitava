@@ -6,11 +6,13 @@ import { fetchRelatedBlogs } from '../../hooks/useRecommended';
 import dayjs from "../../lib/dayjsConfig.js";
 import SectionHero from '../../components/SectionHero';
 import Container from '../../components/Container';
+import SEO from '../../components/SEO';
 const CountryDetails = () => {
     const { cid } = useParams();
 
     const { t } = useTranslation('destinations');
     const { t: tcommon } = useTranslation('common');
+
     const [related, setRelated] = useState([]);
     const country = Object.values(
         t("countries", { returnObjects: true })
@@ -24,7 +26,6 @@ const CountryDetails = () => {
             excludeId: null,
         })
             .then((data) => {
-                console.log(data)
                 setRelated(data);
 
 
@@ -33,9 +34,61 @@ const CountryDetails = () => {
                 console.error(err);
             });
     }, [cid]);
+
+    // === JSON-LD ===
+    const jsonLD = {
+        "@context": "https://schema.org",
+        "@type": "TouristDestination",
+
+        "name": country.name,
+        "description": country.description,
+        "slogan": country.motto,
+        "image": `https://www.sitava-travel.com${country.heroImage}`,
+        "url": `https://www.sitava-travel.com/destinations/${country.slug}`,
+
+        "climate": {
+            "@type": "Climate",
+            "weather": country.weather?.temp,
+            "bestTimeToVisit": country.weather?.bestTime,
+            "season": country.weather?.season
+        },
+
+        "hasPart": country.beaches.map((b, i) => ({
+            "@type": "TouristAttraction",
+            "name": b.name,
+            "description": b.desc,
+            "position": i + 1,
+            "url": `https://www.sitava-travel.com/destinations/${country.slug}#${b.name.toLowerCase().replace(/\s+/g, "-")}`
+        })),
+
+        "offers": {
+            "@type": "OfferCatalog",
+            "name": `Почему выбрать ${country.name}`,
+            "itemListElement": country.highlights.map((h, i) => ({
+                "@type": "Offer",
+                "name": h.title,
+                "description": h.text,
+                "position": i + 1
+            }))
+        },
+
+        "geo": {
+            "@type": "Place",
+            "name": country.name
+        },
+
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://www.sitava-travel.com/destinations/${country.slug}`
+        }
+    };
     return (
         <>
-
+            <SEO
+                title={`${country.name} — Направление | Sitava Travel`}
+                description={country.description}
+                jsonLD={jsonLD}
+            />
             {/* Hero */}
             <SectionHero
                 title={country.name}
