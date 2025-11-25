@@ -245,14 +245,6 @@ export default function Blogs() {
 
                 {!loading && !error && (
                     <>
-                        {/* Featured */}
-                        {/* {featured && (
-                            <div className="mb-10">
-                                <h2 className="text-3xl font-heading font-bold mb-4">Featured</h2>
-                                <FeaturedArticle article={featured} />
-                            </div>
-                        )} */}
-
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
                             <main className="lg:col-span-2 flex flex-col">
                                 <div ref={summaryRef} />

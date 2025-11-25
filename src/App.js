@@ -28,7 +28,8 @@ const Home = React.lazy(() => import("./pages/home/Home"));
 const CountryDetail = React.lazy(() => import("./pages/Destinations/CountryDetails.js"));
 const Destinations = React.lazy(() => import("./pages/Destinations/Destinations.js"));
 const Blogs = React.lazy(() => import("./pages/blogs/Blogs.js"))
-const SingleBlogPage = React.lazy(() => import("./pages/blogs/SingleBlogPage.js"))
+const SingleBlogPage = React.lazy(() => import("./pages/blogs/SingleBlogPage.js"));
+const Contact =React.lazy(()=>import("./pages/contact/Contact.js"))
 function ScrollToTop() {
   const { pathname } = useLocation();
   React.useEffect(() => {
@@ -77,6 +78,7 @@ function AppContent() {
         <Route path="/destinations/:cid" element={<Layout><CountryDetail /></Layout>} />
         <Route path="/blogs" element={<Layout><Blogs /></Layout>} />
         <Route path="/blogs/:bid" element={<Layout><SingleBlogPage /></Layout>} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
 
         {/* Admin sayfaları */}
         <Route path="/admin/login" element={<Login />} />

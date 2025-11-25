@@ -67,7 +67,7 @@ export default function RecommendedPlaces() {
                     {places.map((place, index) => (
                         <SwiperSlide key={index} >
                             <div className="relative bg-white group rounded-2xl cursor-pointer 
-                                min-h-[380px] w-[260px] flex flex-col gap-2 border border-secondary/30
+                                min-h-[380px] w-[300px] flex flex-col gap-2 border border-secondary/30
                                 hover:border-secondary/90 transition">
 
                                 <div className='overflow-hidden h-48 rounded-tr-xl rounded-tl-xl'>

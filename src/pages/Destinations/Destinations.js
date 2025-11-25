@@ -31,7 +31,7 @@ export default function Destinations() {
                 image="/assets/destinations.webp"
                 nav={[
                     { label: t("countryDetail.navigation.home"), to: "/" },
-                    { label: t("countryDetail.navigation.countries")}
+                    { label: t("countryDetail.navigation.countries") }
                 ]}
             />
             <Container className="py-16 md:py-24">
@@ -47,7 +47,7 @@ export default function Destinations() {
                             transition={{ duration: 0.4, delay: index * 0.05 }}
                             className="rounded-3xl group relative"
                         >
-                            <div className="w-[400px] h-[450px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl bg-gray-200 relative">
+                            <div className="w-full md:w-[400px] h-[450px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl bg-gray-200 relative">
                                 <img
                                     src={item.heroImage}
                                     alt={item.name}

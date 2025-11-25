@@ -1,3 +1,27 @@
 {
-    
+    "nameLabel": "Имя Фамилия",
+    "namePlaceholder": "Введите имя",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Введите Email",
+    "phoneLabel": "Телефон",
+    "phonePlaceholder": "+7 (000) 000-00-00",
+    "destinationLabel": "Направление",
+    "destinationPlaceholder": "Введите направление",
+    "contactMethodTitle": "Где с Вами удобно связаться?",
+    "contactMethod": {
+        "phone": "Телефон",
+        "telegram": "Telegram",
+        "whatsapp": "WhatsApp"
+    },
+    "messagePlaceholder": "Опишите ваши пожелания...",
+    "agreeText": "Я ознакомлен и согласен с <a href='/privacy-policy' class='text-primary underline'>условиями обработки персональных данных</a> и <a href='/privacy-policy' class='text-primary underline'>политикой конфиденциальности</a>.",
+    "submit": "Отправить заявку",
+    "success": "Заявка успешно отправлена!",
+    "error": "Ошибка при отправке формы",
+    "contactInfo": "Контактная информация",
+    "social": "Мы в социальных сетях",
+    "support": {
+        "title": "Поддержка 24/7",
+        "text": "Мы всегда на связи — напишите или позвоните в любое время."
+    }
 }

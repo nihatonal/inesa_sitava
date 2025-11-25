@@ -24,7 +24,8 @@ const Home = () => {
     useEffect(() => {
         fetchPublishedBlogs()
             .then((data) => {
-                setBlogs(data);
+                const latest = data.sort((a, b) => new Date(b.publishedAt || b._createdAt || 0) - new Date(a.publishedAt || a._createdAt || 0)).slice(0, 3)
+                setBlogs(latest);
             })
             .catch((err) => {
                 console.error(err);
