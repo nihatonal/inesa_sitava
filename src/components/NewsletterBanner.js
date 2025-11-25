@@ -33,7 +33,7 @@ const NewsletterBanner = () => {
                 description: err.message,
                 variant: 'destructive',
             });
-            setError(err.message);
+            
         } finally {
             setLoading(false);
         }
