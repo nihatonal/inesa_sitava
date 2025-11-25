@@ -44,7 +44,7 @@ export default function Destinations() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: index * 0.05 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="rounded-3xl group relative"
                         >
                             <div className="w-full md:w-[400px] h-[450px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl bg-gray-200 relative">

@@ -243,7 +243,7 @@ const ContactForm = () => {
       {/* Submit */}
       <button
         type="submit"
-        className="col-span-2 ml-auto w-48 bg-primary flex items-center justify-center text-muted rounded-full py-2 font-bold hover:bg-primary-dark transition"
+        className="col-span-2 ml-auto  mt-4  md:mt-0 w-48 bg-primary flex items-center justify-center text-muted rounded-full py-2 font-bold hover:bg-primary-dark transition"
       >
         {!loading ? t("submit") : <Spinner size={24} color="#fff" />}
       </button>
