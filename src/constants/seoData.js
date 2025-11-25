@@ -101,6 +101,13 @@ const jsonLD = {
                 "image": `https://www.sitava-travel.com${country.heroImage}`,
                 "description": country.description
             }))
+        },
+        blogsJSONLD: {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "headline": "Блог о путешествиях — Sitava Travel",
+            "description": "Статьи, советы и путеводители для путешественников по всему миру.",
+            "url": "https://www.sitava-travel.com/blogs",
         }
     }
 }
@@ -133,6 +140,11 @@ export const seoData = {
             description:
                 "Откройте лучшие направления для путешествий по всему миру вместе с Sitava Travel.",
             jsonLD: jsonLD.ru.destinationsJSONLD,
+        },
+        "/blogs": {
+            title: "Блог о путешествиях — Sitava Travel",
+            description: "Статьи, советы и путеводители.",
+            jsonLD: jsonLD.ru.blogsJSONLD
         },
 
         "/privacy-policy": {
