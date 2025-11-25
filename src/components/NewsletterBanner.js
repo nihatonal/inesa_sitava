@@ -7,12 +7,10 @@ const NewsletterBanner = () => {
     const { toast } = useToast();
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        setError("");
 
         try {
             const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/newsletter`, {
@@ -53,7 +51,7 @@ const NewsletterBanner = () => {
                     placeholder="Ваш email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="min-w-72 px-4 py-2 border border-2 border-secondary/30 rounded-full bg-background text-md text-secondary-light focus:outline-none focus:border-secondary/60"
+                    className="min-w-72 px-4 py-2 border border-2 border-secondary/30 rounded-full bg-background text-sm text-secondary-light focus:outline-none focus:border-secondary/60"
                     required
                 />
                 <button

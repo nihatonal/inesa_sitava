@@ -29,6 +29,7 @@ dayjs.locale("ru");
 
 export default function Blogs() {
     const { t } = useTranslation("common");
+    const { i18n } = useTranslation();
 
     // refs
     const summaryRef = useRef(null);
@@ -58,7 +59,7 @@ export default function Blogs() {
         setError(null);
 
         Promise.all([
-            fetchPublishedBlogs(),      // should return normalized blog objects (see note)
+            fetchPublishedBlogs(i18n.language),      // should return normalized blog objects (see note)
             fetchBlogCategories(),      // returns [{title, slug}]
             fetchBlogDestinations(),    // returns [{title, slug}]
         ])

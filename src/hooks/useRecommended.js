@@ -46,9 +46,9 @@ export const fetchBlogDestinations = async () => {
 }
 
 // 🟢 Tüm yayınlanmış blogları çek
-export const fetchPublishedBlogs = async () => {
+export const fetchPublishedBlogs = async (lang) => {
   const query = `
-    *[_type == "blog" && published == true]{
+    *[_type == "blog" && lang == $lang && published == true]{
       _id,
       title,
       "slug": slug.current,
@@ -69,15 +69,15 @@ export const fetchPublishedBlogs = async () => {
       views
     } | order(publishedAt desc)
   `
-  return await sanityClient.fetch(query)
+  return await sanityClient.fetch(query, { lang })
 }
 
 
 // 🟢 Tek blog çek (slug ile)
 // fetchSingleBlog
-export const fetchSingleBlog = async (slug) => {
+export const fetchSingleBlog = async (slug, lang) => {
   const query = `
-    *[_type == "blog" && slug.current == $slug][0]{
+    *[_type == "blog" && lang == $lang && slug.current == $slug][0]{
       _id,
       title,
       excerpt,
@@ -99,19 +99,24 @@ export const fetchSingleBlog = async (slug) => {
       }
     }
   `;
-  return await sanityClient.fetch(query, { slug });
+  return await sanityClient.fetch(query, { slug, lang });
 };
 
 // fetchRelatedBlogs
-export const fetchRelatedBlogs = async ({ categories, destination, excludeId }) => {
+export const fetchRelatedBlogs = async ({ categories, destination, excludeId, lang }) => {
   const catSlugs = categories?.map((c) => c.slug) || [];
   const destSlug = destination?.slug || null;
 
   const query = `
-    *[_type == "blog" && published == true && _id != $excludeId && (
-      count(categories[@->slug.current in $catSlugs]) > 0 ||
-      destination->slug.current == $destSlug
-    )]{
+    *[_type == "blog" 
+      && lang == $lang 
+      && published == true 
+      && _id != $excludeId 
+      && (
+        count(categories[@->slug.current in $catSlugs]) > 0 ||
+        destination->slug.current == $destSlug
+      )
+    ]{
       _id,
       title,
       "slug": slug.current,
@@ -122,11 +127,13 @@ export const fetchRelatedBlogs = async ({ categories, destination, excludeId }) 
   `;
 
   return await sanityClient.fetch(query, {
+    lang,
     excludeId,
     catSlugs,
-    destSlug,
+    destSlug
   });
 };
+
 
 // 🟢 View sayısını artır (blog görüntülendiğinde)
 export const incrementBlogView = async (slug: string) => {

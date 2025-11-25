@@ -26,7 +26,7 @@ const Hero = () => {
                         </Link>
                     </button>
                     <button className="mr-auto md:mr-0 font-semibold tracking-wide glass-btn px-8 py-3">
-                        <Link to="/">
+                        <Link to="/contact">
                             {t("hero.cta2.label")}
                         </Link>
 

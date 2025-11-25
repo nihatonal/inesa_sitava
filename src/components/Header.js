@@ -13,9 +13,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Hero section yüksekliği
-      const heroHeight = window.innerHeight;
-      setScrolled(window.scrollY > heroHeight);
+      setScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);

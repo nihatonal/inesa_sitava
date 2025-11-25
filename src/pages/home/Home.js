@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import Hero from '../../components/Hero'
 import NewsCards from '../../components/NewsCards'
 import PopularDestinations from '../../components/PopularDestinations'
@@ -12,6 +13,7 @@ import { fetchPublishedBlogs } from '../../hooks/useRecommended'
 const Home = () => {
     const [isLoaded, setIsLoaded] = useState(false)
     const [blogs, setBlogs] = useState([]);
+    const { i18n } = useTranslation()
     useEffect(() => {
         // Simülasyon: sayfa yükleniyor
         const timer = setTimeout(() => {
@@ -21,7 +23,7 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        fetchPublishedBlogs()
+        fetchPublishedBlogs(i18n.language)
             .then((data) => {
                 const latest = data.sort((a, b) => new Date(b.publishedAt || b._createdAt || 0) - new Date(a.publishedAt || a._createdAt || 0)).slice(0, 3)
                 setBlogs(latest);

@@ -41,6 +41,7 @@ const generateBlogJSONLD = (blog) => ({
 });
 export default function SingleBlogPage() {
     const { bid } = useParams();
+    const { i18n } = useTranslation();
     const { t } = useTranslation("common");
 
     const [blog, setBlog] = useState(null);
@@ -50,7 +51,7 @@ export default function SingleBlogPage() {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         setLoading(true);
-        fetchPublishedBlogs()
+        fetchPublishedBlogs(i18n.language)
             .then((data) => {
                 setBlogs(data);
 
@@ -64,7 +65,7 @@ export default function SingleBlogPage() {
     useEffect(() => {
         setLoading(true);
 
-        fetchSingleBlog(bid)
+        fetchSingleBlog(bid, i18n.language)
             .then((data) => {
                 setBlog(data);
 
@@ -88,6 +89,7 @@ export default function SingleBlogPage() {
                     categories: data?.categories || [],
                     destination: data?.destination || null,
                     excludeId: data?._id,
+                    lang: i18n.language
                 });
             })
             .then((relatedBlogs) => {

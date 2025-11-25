@@ -18,7 +18,7 @@ export default function ArticleCard({ article }) {
                     {article.excerpt}
                 </p>
 
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center mt-6">
                     <Link to={`/blogs/${article.slug}`} className="relative group text-primary text-sm">
                         Читать
                         <span
