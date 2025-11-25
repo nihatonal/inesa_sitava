@@ -28,7 +28,7 @@ export default function Destinations() {
             <SectionHero
                 title={t("pages.destinations.title")}
                 subtitle={t("pages.destinations.subtitle")}
-                image="/assets/destinations.png"
+                image="/assets/destinations.webp"
                 nav={[
                     { label: t("countryDetail.navigation.home"), to: "/" },
                     { label: t("countryDetail.navigation.countries")}

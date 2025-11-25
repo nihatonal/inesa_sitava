@@ -231,7 +231,7 @@ export default function Blogs() {
             <SectionHero
                 title={t("pages.blog.title")}
                 subtitle={t("pages.blog.subtitle")}
-                image="/assets/blogs.png"
+                image="/assets/blogs.webp"
                 nav={[
                     { label: t("nav.home"), to: "/" },
                     { label: t("nav.blogs") },

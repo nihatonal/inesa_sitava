@@ -16,7 +16,7 @@ export default function FeaturedArticle({ article }) {
                         {dayjs(article.publishedAt).format("D MMMM YYYY")} • {article.readingTime} мин
                     </span>
 
-                    <h2 className="text-2xl mt-2 font-bold text-secondary">{article.title}</h2>
+                    <h2 className="text-2xl mt-2 font-bold text-primary-dark">{article.title}</h2>
                     <p className="text-secondary/70 mt-3">{article.excerpt}</p>
                 </div>
 

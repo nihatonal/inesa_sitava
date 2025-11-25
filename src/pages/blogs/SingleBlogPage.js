@@ -156,7 +156,7 @@ export default function SingleBlogPage() {
                         </div>
 
                         {/* Image */}
-                        <div className="rounded-2xl overflow-hidden shadow-lg mb-10">
+                        <div className="rounded-2xl overflow-hidden shadow-[0_15px_15px_rgba(0,0,0,0.45)] mb-10">
                             <img
                                 src={blog.imageUrl}
                                 alt={blog.imageAlt}
@@ -223,7 +223,7 @@ export default function SingleBlogPage() {
                                         src={urlFor(value).width(800).height(400).url()}
                                         width={1600}
                                         height={900}
-                                        className="rounded-xl shadow-card my-8"
+                                        className="rounded-xl shadow-[0_15px_15px_rgba(0,0,0,0.45)] my-8"
                                     />
                                 ),
                                 separator: ({ value }) => {

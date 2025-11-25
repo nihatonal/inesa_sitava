@@ -8,17 +8,28 @@ import Skeleton from '../../components/Skeleton'
 import Stats from '../../components/Stats'
 import TestimonialSlider from '../../components/TestimonialSlider'
 import WithUs from '../../components/WithUs'
+import { fetchPublishedBlogs } from '../../hooks/useRecommended'
 
 const Home = () => {
     const [isLoaded, setIsLoaded] = useState(false)
-
+    const [blogs, setBlogs] = useState([]);
     useEffect(() => {
         // Simülasyon: sayfa yükleniyor
         const timer = setTimeout(() => {
             setIsLoaded(true)
         }, 800) // 0.8 saniye sonra content render
         return () => clearTimeout(timer)
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        fetchPublishedBlogs()
+            .then((data) => {
+                setBlogs(data);
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    }, []);
 
     if (!isLoaded) {
         // Skeleton placeholder göster
@@ -38,7 +49,7 @@ const Home = () => {
             <WithUs />
             <RecommendedPlaces />
             <TestimonialSlider />
-            <NewsCards />
+            <NewsCards blogs={blogs} />
 
         </div>
     )
