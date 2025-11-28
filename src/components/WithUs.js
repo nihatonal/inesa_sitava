@@ -15,13 +15,13 @@ const WithUs = () => {
                     {/* Left images */}
                     <div className=" grid grid-cols-2 gap-4">
                         <img
-                            src={"/assets/thailand_card.webp"}
+                            src={"/assets/thailand-coast.webp"}
                             className="col-span-2 md:col-span-1 md:row-span-2 rounded-tl-full rounded-tr-full rounded-bl-full rounded-br-0 
                             w-full h-72 md:h-full object-cover shadow-large"
                             alt=""
                         />
                         <img
-                            src={"/assets/maldives_card.webp"}
+                            src={"/assets/vietnam-ha-long-river.webp"}
                             className="w-64 h-64 rounded-tl-full rounded-tr-full rounded-bl-0 rounded-br-full object-cover shadow-large"
                             alt=""
                         />

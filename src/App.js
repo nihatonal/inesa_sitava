@@ -30,6 +30,7 @@ import { useTranslation } from "react-i18next";
 
 // Dynamic imports
 const Home = React.lazy(() => import("./pages/home/Home"));
+const About =React.lazy(()=>import("./pages/about/About.js"))
 const CountryDetail = React.lazy(() => import("./pages/Destinations/CountryDetails.js"));
 const Destinations = React.lazy(() => import("./pages/Destinations/Destinations.js"));
 const Blogs = React.lazy(() => import("./pages/blogs/Blogs.js"))
@@ -111,6 +112,7 @@ function AppContent() {
       <Routes>
         {/* Ana site sayfaları */}
         <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/about" element={<Layout><About /></Layout>} />
         <Route path="/destinations" element={<Layout><Destinations /></Layout>} />
         <Route path="/destinations/:cid" element={<Layout><CountryDetail /></Layout>} />
         <Route path="/blogs" element={<Layout><Blogs /></Layout>} />
